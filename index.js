@@ -35,9 +35,20 @@ client.on('messageCreate',async(message) => {
   if (!message.content.toLowerCase().startsWith(prefix) || message.author.bot) return;
   // console.log(message.content);
   const args = message.content.slice(prefix.length).trim().split(/ +/);
-
-  const commandName = args.shift().toLowerCase();
+  // console.log(args);
+  let commandName = 'q';
+  
+  commandName = args.shift().toLowerCase();
   // console.log(commandName);
+
+  if(args.length === 0 && commandName !== 'f'){
+    const reply = new Discord.EmbedBuilder()
+    .setTitle('No Asset Entered')
+    .setColor('Red')
+    .setDescription(`Format of the command is \`\`\` cc${commandName} [Symbol] <Currency>\`\`\``)
+
+    return message.reply({embeds : [reply]});
+  }
 
   const command = client.commands.get(commandName) ||
   client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

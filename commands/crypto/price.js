@@ -13,7 +13,7 @@ module.exports = {
     console.log(symbolName);
    
 
-    var data;
+   
     const fetchData = async () => {
       try {
         const response = await axios.post('https://api.livecoinwatch.com/coins/single', {

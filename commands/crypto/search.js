@@ -35,10 +35,10 @@ module.exports = {
     const results = await getData();
     let reply;
     const numEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'];
-    let searchResults = `${numEmojis[0]} ${results[0].name}\n`;
+    let searchResults = `${numEmojis[0]} ${results[0].name} : ${results[0].symbol}\n`;
 
     for (let i = 1; i < results.length && i < 5; i++) {
-      searchResults += `${numEmojis[i]} ${results[i].name}\n`;
+      searchResults += `${numEmojis[i]} ${results[i].name} : ${results[i].symbol}\n`;
     }
 
     if (results.length > 1) {
@@ -62,6 +62,7 @@ module.exports = {
           const collector = msg.createReactionCollector({ filter, time: 15000 });
 
           collector.on("collect", async(reaction, user) => {
+
             console.log(`Collected ${reaction.emoji.name} from ${user.tag}`);
             const selectedIndex = numEmojis.indexOf(reaction.emoji.name);
             const selectedCoin = results[selectedIndex];
@@ -94,6 +95,7 @@ module.exports = {
             
             const detailreply = new EmbedBuilder()
             .setAuthor({name: `${selectedCoin.name}/${selectedCoin.symbol}`, iconURL: `${livePriceApi.png32}`})
+            .setColor(`${livePriceApi.color}`)
             .setTitle(`Price: ${Number(selectedCoin.price).toFixed(4)}`)
             .addFields({ name: '\nℹ️ Details', value: `\`\`\`All Time High      : ${Number(livePriceApi.allTimeHighUSD).toFixed(4)}\nCirculating Supply : ${millify(Number(results.circulatingSupply))}\nMax Supply         : ${millify(livePriceApi.maxSupply)}\nVolume             : ${millify(livePriceApi.volume)}\`\`\``, inline: true })
             

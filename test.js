@@ -5,9 +5,8 @@ const {cryptoApiKey} = require('./config.json');
 async function run(){
   const fetchData = async () => {
     try {
-      const response = await axios.post('https://api.livecoinwatch.com/coins/single', {
-        currency: 'USD',
-        code: `ETH`,
+      const response = await axios.post("https://api.livecoinwatch.com/fiats/all", {
+       
         meta: true,
       }, {
         headers: {
