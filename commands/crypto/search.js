@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder,} = require('discord.js');
 const { coinRankingApi,cryptoApiKey } = require("../../config.json");
 const axios = require('axios');
 const {millify} = require('millify');

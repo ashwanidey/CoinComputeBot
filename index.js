@@ -5,7 +5,7 @@ const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const Discord = require("discord.js")
 const { token } = require('./config.json');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds,GatewayIntentBits.MessageContent,GatewayIntentBits.GuildMessages,GatewayIntentBits.GuildMessageReactions] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds,GatewayIntentBits.MessageContent,GatewayIntentBits.GuildMessages,GatewayIntentBits.GuildMessageReactions,] });
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
@@ -41,14 +41,14 @@ client.on('messageCreate',async(message) => {
   commandName = args.shift().toLowerCase();
   // console.log(commandName);
 
-  if(args.length === 0 && commandName !== 'f'){
-    const reply = new Discord.EmbedBuilder()
-    .setTitle('No Asset Entered')
-    .setColor('Red')
-    .setDescription(`Format of the command is \`\`\` cc${commandName} [Symbol] <Currency>\`\`\``)
+  // if(args.length === 0 && commandName !== 'f' ){
+  //   const reply = new Discord.EmbedBuilder()
+  //   .setTitle('No Asset Entered')
+  //   .setColor('Red')
+  //   .setDescription(`Format of the command is \`\`\` cc${commandName} [Symbol] <Currency>\`\`\``)
 
-    return message.reply({embeds : [reply]});
-  }
+  //   return message.reply({embeds : [reply]});
+  // }
 
   const command = client.commands.get(commandName) ||
   client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
