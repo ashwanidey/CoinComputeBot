@@ -1,7 +1,13 @@
 // const axios = require('axios');
-// const {cryptoApiKey} = require('./config.json');
+const {cryptoApiKey} = require('./config.json');
 
-const { default: axios } = require("axios");
+const axios = require('axios');
+const { createCanvas, Image,GlobalFonts  } = require("@napi-rs/canvas");
+
+console.log(GlobalFonts.families[0]);
+
+
+
 
 
 // async function run(){
@@ -86,35 +92,84 @@ const { default: axios } = require("axios");
 
 // console.log(ISTTime);
 
-const transactionId = '0xcbb5fd12151e5b351797146c0c819deb142c05b03f52f133532d5377e09f8e51'
-const address = '0x825deCAfc2fF5e84407F222CAe90F3897911e6D9';
+// const transactionId = '0xcbb5fd12151e5b351797146c0c819deb142c05b03f52f133532d5377e09f8e51'
+// const address = '0x825deCAfc2fF5e84407F222CAe90F3897911e6D9';
 
-function convertToEpochTime(isoTimestamp) {
-  const date = new Date(isoTimestamp);
-  return date.getTime(); // Returns epoch time in milliseconds
-}
+// function convertToEpochTime(isoTimestamp) {
+//   const date = new Date(isoTimestamp);
+//   return date.getTime(); // Returns epoch time in milliseconds
+// }
 
-const call = async () => {
-  const getTransactionDetails = async () => {
-    try{
-      const response = await axios.get(`https://api.blockcypher.com/v1/eth/main/txs/${transactionId}`,{
-        headers: {
-          'content-type': 'application/json',
-        }
-      })
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching data:', error);
+// const call = async () => {
+//   const getTransactionDetails = async () => {
+//     try{
+//       const response = await axios.get(`https://api.blockcypher.com/v1/eth/main/txs/${transactionId}`,{
+//         headers: {
+//           'content-type': 'application/json',
+//         }
+//       })
+//       return response.data;
+//     } catch (error) {
+//       console.error('Error fetching data:', error);
 
-    }
+//     }
     
-  }
+//   }
 
-    const transactionDetails = await getTransactionDetails();
-    console.log(typeof(convertToEpochTime(transactionDetails.received)));
-    const time = 1673677163000
-    console.log(time === convertToEpochTime(transactionDetails.received));
-}
+//     const transactionDetails = await getTransactionDetails();
+//     console.log(typeof(convertToEpochTime(transactionDetails.received)));
+//     const time = 1673677163000
+//     console.log(time === convertToEpochTime(transactionDetails.received));
+// }
 
-call();
+// call();
+// const currency = 'USD';
+// const symbolName = 'BTC';
 
+
+
+
+
+// async function test(){
+
+//   const fetchData = async (currency,symbolName) => {
+//     try {
+//       const response = await axios.post('https://api.livecoinwatch.com/coins/single', {
+//         currency: `${currency}`,
+//         code: `${symbolName}`,
+//         meta: true,
+//       }, {
+//         headers: {
+//           'content-type': 'application/json',
+//           'x-api-key': `${cryptoApiKey}`,
+//         },
+//       });
+
+//       // Handle response data
+//       return response.data
+//     } catch (error) {
+//       // Handle error
+//       console.error('Error fetching data:', error);
+//       // return 0;
+//     }
+//   };
+//   const results = await fetchData('USD','BTC');
+//   console.log(results);
+
+// }
+
+// test()
+
+
+// const {fetchCoinDataLive} = require('./cryptoCurrencies')
+
+// const currency = 'USD';
+// const symbolName = 'BTC';
+
+// fetchCoinDataLive(currency, symbolName)
+//   .then(data => {
+//     console.log('Coin data:', data);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
