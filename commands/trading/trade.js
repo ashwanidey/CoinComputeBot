@@ -168,6 +168,7 @@ module.exports = {
   description: "Triggers the trading setup",
   usage: "",
   async execute(bot, message, args) {
+   
     let asset;
     if (args.length !== 0) asset = args[0].toUpperCase();
     const intialReply = new EmbedBuilder()

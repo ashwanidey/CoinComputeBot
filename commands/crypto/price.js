@@ -38,7 +38,7 @@ module.exports = {
     const results = await fetchData();
 
     const reply = new EmbedBuilder()
-      // .setAuthor('Error #0', process.env.CROSSICON)
+      
       .setAuthor({name: `#${results.rank}   ${symbolName}/USD`,iconURL: `${results.png32}`})
       .setTitle(`Price : ${Number(results.rate).toFixed(4)}`)
       .setColor(`${results.color}`)

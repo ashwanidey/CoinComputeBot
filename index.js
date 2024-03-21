@@ -16,15 +16,18 @@ const commandFolders = fs.readdirSync(foldersPath);
 
 for (const folder of commandFolders) {
   // console.log(folder);
-  if(folder === "utility") continue;
+  // if(folder === "utility") continue;
   const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
   for (const file of commandFiles) {
+    
       const command = require(`./commands/${folder}/${file}`);
       // if(file === "price.js")
+      // console.log(command);
      
       client.commands.set(command.name, command);
   }
 }
+
 
 
 client.once(Events.ClientReady, readyClient => {
@@ -39,7 +42,7 @@ client.on('messageCreate',async(message) => {
   let commandName = 'q';
   
   commandName = args.shift().toLowerCase();
-  // console.log(commandName);
+  console.log(commandName);
 
   // if(args.length === 0 && commandName !== 'f' ){
   //   const reply = new Discord.EmbedBuilder()
@@ -53,7 +56,7 @@ client.on('messageCreate',async(message) => {
 
   const command = client.commands.get(commandName) ||
   client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-  // console.log(command);
+  console.log(command);
 
   if (!command) return;
   

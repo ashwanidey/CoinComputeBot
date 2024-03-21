@@ -62,9 +62,6 @@ module.exports = {
       .setAuthor({name: `#${results.rank}   ${symbolName}/${currency}`,iconURL: `${results.png32}`})
       .setTitle(`Price : ${(Number(results.rate).toFixed(4))}`)
       .setColor(`${results.color}`)
-      
-      .setDescription(`Search Currencies :  \`\` ccs [Asset Name or Symbol] \`\``)
- 
       message.reply({ embeds: [reply] });
     }
   }
