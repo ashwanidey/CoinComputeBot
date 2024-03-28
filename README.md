@@ -45,16 +45,71 @@ Coin Compute is your ultimate Discord bot for accessing comprehensive cryptocurr
   
 
   <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/cecbf01b-138c-4877-9db0-f3f67aa46bb4"  height="200">
+  
+  
+
+### CRYPTO COMMANDS
+
+- #### ``cc search [symbolName]`` : <i>Searches the mentioned symbolName or crypto. </i>
+    ``aliases: ['s']``
+  
+     ##### Example: ``ccs bitcoin`` ``ccs doge``
+Before reacting            | After reacting
+:-------------------------:|:-------------------------:
+<img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/12bdc2e0-929b-44fc-816c-a851eba7786f"  height="200">  |   <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/2d0ee9d6-4ced-445b-9808-1aa01b47cfd8"  height="200">
+  
 
 
-### Crypto Commands
 
-- #### ``ccs``
- : Searches the mentioned asset.
-- **ccc [symbolName] <currency>**: Shows chart of asset.
-- **ccp [symbolName] <currency>**: Shows detail about the crypto.
+- #### ``cc chart [symbolName]``: <i>Shows chart of asset. </i>
+    ``aliases: ['c']``
+  
+     ##### Example: ``ccc bitcoin`` ``ccc doge``
+  <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/a05b7813-e40e-4687-acc6-8da8bc257e69"  height="300">
+ 
 
-### Sub Commands
+  
 
-- **ccq [symbolName]**: Shows quick price of an asset.
-- **ccf <currency>**: Shows available fiat.
+ - #### ``cc price [symbolName]``: <i>Shows detail about the crypto. </i>
+    ``aliases: ['p']``
+  
+     ##### Example: ``ccp btc`` ``ccp doge``
+
+   <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/65867e89-dad2-48cf-a14e-ee3ffb92040e"  height="300">
+
+
+
+### SUB COMMANDS
+
+
+- #### ``cc quickPrice [symbolName]``: <i>Shows quick price of an asset. </i>
+    ``aliases: ['q']``
+  
+     ##### Example: ``ccq btc`` ``ccq doge``
+
+  <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/917d1b8b-da53-4cf7-9ff3-3e915a4c5dfd"  height="200">
+
+
+
+  - #### ``cc currency``: <i>Shows available fiat.</i>
+    ``aliases: ["fiat", "f"]``
+  
+     ##### Example: ``ccf`` ``ccf inr``
+    
+ccf            | ccf [currencyName]
+:-------------------------:|:-------------------------:
+<img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/a036306b-757e-4147-a834-6fe90a2fa315"  height="300">  |   <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/a2666bdd-7ae4-4947-801b-2bca2d212b78"  height="200">
+
+- #### ``cc subscribe``: <i>Shows an eth address which can be used to donate eth.</i>
+    ``aliases: ["sub", "b"]``
+  
+     ##### Example: ``ccb`` ``ccsub``
+<img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/9c5be0ee-1130-4bed-a5af-62608bcd9025"  height="400">
+
+
+
+  
+
+
+
+
