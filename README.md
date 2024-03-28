@@ -16,7 +16,7 @@ Coin Compute is your ultimate Discord bot for accessing comprehensive cryptocurr
   ``aliases: ['commands', 'h']``
   ##### Example: ``cchelp`` ``cch``
   
-
+---
 ### TRADE COMMANDS
 
 #### 1️⃣ ``cc trade``  : <i>Starts the trading setup </i>
@@ -47,7 +47,7 @@ Coin Compute is your ultimate Discord bot for accessing comprehensive cryptocurr
   <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/cecbf01b-138c-4877-9db0-f3f67aa46bb4"  height="200">
   
   
-
+---
 ### CRYPTO COMMANDS
 
 - #### ``cc search [symbolName]`` : <i>Searches the mentioned symbolName or crypto. </i>
@@ -77,7 +77,7 @@ Before reacting            | After reacting
 
    <img src="https://github.com/ashwanidey/CoinComputeBot/assets/110251931/65867e89-dad2-48cf-a14e-ee3ffb92040e"  height="300">
 
-
+---
 
 ### SUB COMMANDS
 
