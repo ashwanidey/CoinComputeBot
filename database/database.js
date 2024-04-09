@@ -9,7 +9,7 @@ mongoose.connect(mongo_uri);
 //       const conn = await
 //       console.log(`Mongo db connected: ${conn.connection.host}`);
 //   } catch (error) {
-//       console.log(error);
+//       console.log(error);  
 //       process.exit(1);
 //   }
 // };

@@ -215,7 +215,7 @@ module.exports = {
     //   });
 
     // } else {
-    message.reply({ embeds: [intialReply] }).then(async (m) => {
+      message.channel.send({ embeds: [intialReply] }).then(async (m) => {
       // const row = new ActionRowBuilder().addComponents(btc, eth, sol, bnb);
       userData = await User.findOne({ userid: message.author.id });
       const allTrades = userData.trades;

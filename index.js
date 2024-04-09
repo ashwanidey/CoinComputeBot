@@ -1,5 +1,16 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const express = require("express");
+const app = express();
+const cors = require("cors");
+app.use(express.json());
+app.use(cors());
+
+app.listen(3001, () => console.log(`Server Port: ${3001}`));
+app.get("/keep-alive", (req, res) => {
+  res.send("Server is alive.");
+});
+
 
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const Discord = require("discord.js")

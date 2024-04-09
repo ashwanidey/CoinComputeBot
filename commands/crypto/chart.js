@@ -165,8 +165,9 @@ const emoji = data.change > 0 ? `📈` : `📉`;
 
 const reply = new EmbedBuilder()
 .setTitle(`${searchedData[0].symbol}/USD\nCurrent Price : $${Number(searchedData[0].price).toFixed(4)}\nChange : ${data.change}% ${emoji}` )
-.setImage(myChart.getUrl());
-message.reply({ embeds: [reply] });
+.setImage(myChart.getUrl())
+.setColor("Purple");
+message.channel.send({ embeds: [reply] });
 
     // const reply = new EmbedBuilder()
     //   // .setAuthor('Error #0', process.env.CROSSICON)
