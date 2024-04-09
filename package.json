@@ -15,6 +15,7 @@
     "nodemon": "^3.1.0"
   },
   "scripts": {
+    "build" : "npm i",
     "start": "nodemon index.js"
   }
 }
